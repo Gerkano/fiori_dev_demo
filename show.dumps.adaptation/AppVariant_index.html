@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Adaptation Project Preview</title>
+
+	<style>
+		/* hide variant management popover footer */
+		.sapUiFlVarMngmtPopover .sapMPageWithFooter>section { bottom: 0 !important; }
+		.sapUiFlVarMngmtPopover .sapMPageFooter, .sapUICompVarMngmtPopover .sapMPageFooter { display: none !important; }
+	</style>
+	
+	<script type="text/javascript">
+		window["sap-ushell-config"] = {
+			defaultRenderer : "fiori2",
+			renderers: {
+				fiori2: {
+					componentData: {
+						config: {
+							appState: "headerless",
+							rootIntent: "adaptationproject-display"
+						}
+					}
+				}
+			},
+			applications: {
+				"adaptationproject-display": {
+					title: "Adaptation Project Preview",
+					additionalInformation: "SAPUI5.Component=dumpsShow.dumps",
+					applicationType: "URL",
+					applicationDependencies: {"name":"dumpsShow.dumps","url":"/sap/bc/ui5_ui5/sap/zgc_show_dumps/~4F9426198B126F95437F4C026C0994B3~5","manifest":{"_version":"1.49.0","sap.app":{"id":"customer.show.dumps.adaptation","type":"application","i18n":"i18n/i18n.properties","applicationVersion":{"version":"0.0.1"},"title":"Adaptation for dump error logs","description":"A Fiori application.","resources":"resources.json","sourceTemplate":{"id":"@sap/generator-fiori:basic","version":"1.9.3","toolsId":"a97b4db2-43b2-4305-bfa5-4a180752794a"},"dataSources":{"mainService":{"uri":"/sap/opu/odata/sap/ZGC_SHOW_DUMPS_ODATA_SRV/","type":"OData","settings":{"annotations":[],"localUri":"localService/metadata.xml","odataVersion":"2.0"}}},"crossNavigation":{"inbounds":{"dumpsShow-dumps-inbound":{"signature":{"parameters":{},"additionalParameters":"allowed"},"semanticObject":"dumpsInfo","action":"display","title":"Show dumps information","subTitle":"{{flpSubtitle}}","icon":""}}}},"sap.ui":{"technology":"UI5","icons":{"icon":"","favIcon":"","phone":"","phone@2":"","tablet":"","tablet@2":""},"deviceTypes":{"desktop":true,"tablet":true,"phone":true}},"sap.ui5":{"flexEnabled":true,"dependencies":{"minUI5Version":"1.112.1","libs":{"sap.m":{},"sap.ui.core":{},"sap.f":{},"sap.suite.ui.generic.template":{},"sap.ui.comp":{},"sap.ui.generic.app":{},"sap.ui.table":{},"sap.ushell":{}}},"contentDensities":{"compact":true,"cozy":true},"models":{"i18n":{"type":"sap.ui.model.resource.ResourceModel","settings":{"bundleName":"dumpsShow.dumps.i18n.i18n","enhanceWith":[{"bundleUrl":"i18n/i18n.properties","bundleUrlRelativeTo":"manifest"}]}},"":{"dataSource":"mainService","preload":true,"settings":{}}},"resources":{"css":[{"uri":"css/style.css"}]},"routing":{"config":{"routerClass":"sap.m.routing.Router","viewType":"XML","async":true,"viewPath":"dumpsShow.dumps.view","controlAggregation":"pages","controlId":"app","clearControlAggregation":false},"routes":[{"name":"RouteView1","pattern":":?query:","target":["TargetView1"]}],"targets":{"TargetView1":{"viewType":"XML","transition":"slide","clearControlAggregation":false,"viewId":"View1","viewName":"View1"}}},"rootView":{"viewName":"dumpsShow.dumps.view.App","type":"XML","async":true,"id":"App"},"componentName":"dumpsShow.dumps","appVariantId":"customer.show.dumps.adaptation","appVariantIdHierarchy":[{"appVariantId":"dumpsShow.dumps.Component","layer":"VENDOR","version":"0.0.1"}]},"sap.cloud":{"public":true,"service":"dumpsShowdumps"},"sap.platform.abap":{"uri":"/sap/bc/ui5_ui5/sap/zgc_show_dumps"}},"self":{"name":"dumpsShow.dumps","url":"/sap/bc/ui5_ui5/sap/zgc_show_dumps/~4F9426198B126F95437F4C026C0994B3~5"},"asyncHints":{"libs":[{"name":"sap.ushell"},{"name":"sap.ui.table"},{"name":"sap.ui.generic.app"},{"name":"sap.ui.comp"},{"name":"sap.suite.ui.generic.template"},{"name":"sap.f"},{"name":"sap.ui.core"},{"name":"sap.m"}],"requests":[{"name":"sap.ui.fl.changes","reference":"dumpsShow.dumps.Component"}]},"altManifestUrl":"webapp/manifest.appdescr_variant","componentData":{"startupParameters":{"sap-ui-fl-max-layer":["CUSTOMER_BASE"]}}}
+				}
+			}
+		};
+	</script>
+
+	<script src="../../1.111.4/test-resources/sap/ushell/bootstrap/sandbox.js" id="sap-ushell-bootstrap"></script>
+
+	<script id="sap-ui-bootstrap"
+			src="../../1.111.4/resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.ushell, sap.ui.rta"
+			data-sap-ui-theme="sap_belize"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-xx-bindingSyntax="complex"
+			data-sap-ui-xx-rootComponentNode="content"
+			data-sap-ui-xx-designMode="true"
+			data-sap-ui-flexibilityServices='[{"connector": "LrepConnector", "layers": [], "url": "/sap/bc/lrep"},{"applyConnector": "WorkspaceApplyConnector", "writeConnector": "WorkspaceWriteConnector", "custom": true, "layers": ["CUSTOMER_BASE"]}]'
+			data-sap-ui-xx-suppressDeactivationOfControllerCode="true">
+	</script>
+
+	<script type="text/javascript">
+		sap.ui.getCore().attachInit(function() {
+			sap.ushell.Container.createRenderer().placeAt("content");
+		});
+	</script>
+
+	<script src="https://port8888-workspaces-ws-nr6pt.us10.trial.applicationstudio.cloud.sap/1.1000.19/webapp/resources/sap/watt/lib/lodash/lodash.js" type="text/javascript"></script>
+	<script src="https://port8888-workspaces-ws-nr6pt.us10.trial.applicationstudio.cloud.sap/features/SAP.ui5-visual-editor-vscode/1.0.96/sap.watt.saptoolsets.fiori.project.uiadaptationfeature/client/v1.0.96_1678884773458/src/uiadaptation/util/UIAdaptationTransceiver.js" type="text/javascript"></script>
+	<script src="https://port8888-workspaces-ws-nr6pt.us10.trial.applicationstudio.cloud.sap/features/SAP.ui5-visual-editor-vscode/1.0.96/sap.watt.saptoolsets.fiori.project.uiadaptationfeature/client/v1.0.96_1678884773458/src/uiadaptation/util/AppVariantPreviewHelper.js" type="text/javascript"></script>
+
+</head>
+
+<body class="sapUiBody" id="content" role="application">
+</body>
+
+</html>

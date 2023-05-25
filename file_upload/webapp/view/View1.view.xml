@@ -1,0 +1,42 @@
+<mvc:View xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="fileupload.controller.View1" displayBlock="true" class="viewPadding">
+    <l:VerticalLayout id="layoid">
+        <u:FileUploader id="fileUploader" 
+                        name="myFileUpload" 
+                        uploadUrl="upload/" 
+                        tooltip="Upload your file to a local server" 
+                        uploadComplete="handleUploadComplete" 
+                        afterDialogClose="checkUpload"
+                        fileType="csv,xls"/>
+
+    <l:content>     
+        <Button id="uploadButton" text="Upload file" enabled="false" press="handleUploadPress"/>  
+        <Button id="showButton" text="Show Content" enabled="false" press="handleShowData"/> 
+    </l:content>   
+    </l:VerticalLayout>
+    <Table noDataText="Drop column list items here and columns in the area above" id="table0" items="{/}">
+        <items>
+            <ColumnListItem type="Active" id="item0">
+                <cells>
+                    <Text text="{ID}" id="text2"/>
+                    <Text text="{Name}" id="text3"/>
+                    <Text text="{Model}" id="text4"/></cells>
+            </ColumnListItem>
+        </items>
+        <columns>
+            <Column id="column0">
+                <header>
+                    <Label text="ID" id="label0"/>
+                </header>
+            </Column>
+            <Column id="column1">
+                <header>
+                    <Label text="Name" id="label1"/>
+                </header>
+            </Column>
+            <Column id="column2">
+                <header>
+                    <Label text="Model" id="label2"/>
+                </header>
+            </Column></columns></Table>
+
+</mvc:View>

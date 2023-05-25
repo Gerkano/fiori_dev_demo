@@ -1,0 +1,94 @@
+_schema-version: "3.2"
+ID: nstabletask
+description: A Fiori application. Table exercise
+version: 0.0.1
+modules:
+- name: nstabletask-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: nstabletask-destination-service
+    parameters:
+      content-target: true
+  - name: nstabletask-repo-host
+    parameters:
+      service-key:
+        name: nstabletask-repo-host-key
+  - name: nstabletask-uaa
+    parameters:
+      service-key:
+        name: nstabletask-uaa-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: nstabletask_html_repo_host
+          ServiceInstanceName: nstabletask-html5-srv
+          ServiceKeyName: nstabletask-repo-host-key
+          sap.cloud.service: nstabletask
+        - Authentication: OAuth2UserTokenExchange
+          Name: nstabletask_uaa
+          ServiceInstanceName: nstabletask-xsuaa-srv
+          ServiceKeyName: nstabletask-uaa-key
+          sap.cloud.service: nstabletask
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+- name: nstabletask-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: nstabletask-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - nstabletask.zip
+      name: nstabletask
+      target-path: resources/
+- name: nstabletask
+  type: html5
+  path: .
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: nstabletask-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: nstabletask-destination-service
+    service-plan: lite
+- name: nstabletask-uaa
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: nstabletask-xsuaa-srv
+    service-plan: application
+- name: nstabletask-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: nstabletask-html5-srv
+    service-plan: app-host
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true

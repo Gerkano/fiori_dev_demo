@@ -1,0 +1,21 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="project2.controller.View1" displayBlock="true">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Table noDataText="Drop column list items here and columns in the area above" id="table0" columns="{/BusinessPartnerSet}" items="{/BusinessPartnerSet}">
+                <items>
+                    <ColumnListItem type="Active" id="item0">
+                        <cells>
+                            <Text text="Row 1 Cell 1" id="text2"/>
+                            <Text text="Row 1 Cell 2" id="text3"/>
+                            <Text text="Row 1 Cell 3" id="text4"/></cells>
+                    </ColumnListItem>
+                </items>
+                <columns>
+                    <Column id="column0">
+                        <header>
+                            <Label text="Header 1" id="label0"/>
+                        </header>
+                    </Column></columns></Table>
+        </content>
+    </Page>
+</mvc:View>

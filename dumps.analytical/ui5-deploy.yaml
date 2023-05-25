@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "2.6"
+metadata:
+  name: dumps.Analytical.dumps.analytical
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: D5H
+          url: http://172.16.56.194:8000
+        app:
+          name: ZGC_DSOVERVIEW
+          description: Dump error analytical overview table
+          package: $tmp
+          transport: ""
+        exclude:
+          - /test/

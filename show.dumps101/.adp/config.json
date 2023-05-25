@@ -1,0 +1,11 @@
+{
+  "componentname": "showDumps2.showdumpscds",
+  "safeMode": true,
+  "appvariant": "show.dumps101",
+  "layer": "CUSTOMER_BASE",
+  "sourceSystem": "D5H",
+  "isOVPApp": false,
+  "isFioriElement": true,
+  "environment": "ABAP",
+  "ui5Version": "1.113.0"
+}

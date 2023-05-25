@@ -1,0 +1,82 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"  
+	xmlns:p13n="sap.m.p13n" xmlns:core="sap.ui.core" controllerName="dumpsShow.dumps.controller.View1" displayBlock="true"><Page id="page" title="{i18n>title}">
+        <content><Input xmlns="sap.m" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" value="{Uname}" id="input0" cd:w5g.dt.context="/SHOW_DUMPSSet" width="15%" name="User name" placeholder="User name"/>
+        <DateRangeSelection id="DRS1" class="DRS1" width="30%" placeholder="YYYY-MM-dd - YYYY-MM-dd" value="{     'type': 'sap.ui.model.type.DateInterval',     'formatOptions': {      'pattern': 'yyyy/MM/dd'     },     'parts': [      {       'type': 'sap.ui.model.type.Date',       'path': '/start'      },      {       'type': 'sap.ui.model.type.Date',       'path': '/end'      }     ]    }" change="handleChange"/>
+            
+            <MultiInput width="20%" placeholder="Mandant min/max" maxTokens="2" showClearIcon="true" id="multiInput" showSuggestion="true" startSuggestion="0" showValueHelp="false">
+            <suggestionItems>
+            <core:Item id="itm01" key="{Mandt}" text="500"/>
+            <core:Item id="itm02" key="{Mandt}" text="555"/>
+            <core:Item id="itm03" key="{Mandt}" text="100"/>
+            <core:Item id="itm04" key="{Mandt}" text="001"/>
+            <core:Item id="itm05" key="{Mandt}" text="200"/>
+            </suggestionItems>
+		</MultiInput>
+            
+            <Button xmlns="sap.m" press="onFilterPress" text="Filter" id="button0" activeIcon="sap-icon://add-filter" type="Accept"/>
+			
+            <Button id="button001" tooltip="Sort" icon="sap-icon://sort" text="Sort Options" press="handleSortButtonPressed"/>
+            
+            <Table xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+             noDataText="Drop column list items here and columns in the area above" id="table0" 
+             cd:w5g.dt.context="/SHOW_DUMPSSet">
+
+                <columns>
+                    <Column id="column0">
+                        <header>
+                            <Label text="Name{Uname}" id="label0" cd:w5g.dt.context="/SHOW_DUMPSSet"/>
+                        </header>
+                    </Column>
+
+                    <Column id="column1" sortIndicator="None">
+                        <header>
+                        
+                            <Label text="Date" id="label1"/>
+                        </header>
+                    </Column>
+                    <Column id="column2">
+                        <header>
+                            <Label text="Time" id="label2"/>
+                        </header>
+                    </Column>
+                    <Column id="column3">
+                        <header>
+                            <Label text="Host" id="label3"/>
+                        </header>
+                    </Column>
+                    <Column id="column4">
+                        <header>
+                            <Label text="Mandant" id="label4"/>
+                        </header>
+                    </Column>
+                    <Column id="column5" sortIndicator="None">
+                        <header>
+                            <Label text="Modno" id="label5"/>
+                        </header>
+                    </Column>
+                    <Column id="column6">
+                        <header>
+                            <Label text="Sequence" id="label6"/>
+                        </header>
+                    </Column>
+                    <Column id="column7">
+                        <header>
+                            <Label text="Xhold" id="label7"/>
+                        </header>
+                    </Column>
+                </columns>
+            </Table>
+
+            <p13n:Popup id='p13nPopup' title="Sort options" reset=".reset" warningText="This will set sort options to default" close="onConfirmDialog">
+
+
+            <p13n:panels>
+                <p13n:SortPanel id="sortPanel" title="Sort" change="parseP13nState"/>
+            </p13n:panels>
+
+
+	</p13n:Popup>
+            <sap.ui.core:ComponentContainer xmlns:sap.ui.core="sap.ui.core" width="100%" id="container0"/>
+        </content>
+    </Page>
+</mvc:View>

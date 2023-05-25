@@ -1,0 +1,69 @@
+<mvc:View xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" controllerName="tableTask.tabletask.controller.tableView" height="100%">
+    <m:Page showHeader="true" enableScrolling="true" class="sapUiContentPadding">
+        <m:content>
+            <Table id="table1" selectionMode="Single" fixedColumnCount="1" selectionBehavior="Row" ariaLabelledBy="title" rows="{/BusinessPartnerSet}" visibleRowCount="10" showColumnVisibilityMenu="true" width="100%">
+                <extension>
+                    <m:OverflowToolbar active="true" asyncMode="true">
+                        <m:Title id="title" text="Suppliers"/>
+                    </m:OverflowToolbar>
+                </extension>
+                <columns>
+                    <Column width="11rem" sortProperty="CompanyName" filterProperty="CompanyName">
+                        <m:Label text="Supplier" textAlign="Center" width="100%"/>
+                        <template>
+                            <m:Text text="{CompanyName}"/>
+                        </template>
+                    </Column>
+                    <Column id="contacts" width="11rem" sortProperty="Address/Street" filterProperty="Address/Street" headerSpan="4,2">
+                        <multiLabels>
+                            <m:Label text="Contacts" textAlign="Center" width="100%"/>
+                            <m:Label text="Address" textAlign="Center" width="100%"/>
+                            <m:Label text="Street" textAlign="Center" width="100%"/>
+                        </multiLabels>
+                        <template>
+                            <m:Text text="{Address/Street}, {Address/Building}" wrapping="false"/>
+                        </template>
+                    </Column>
+                    <Column width="11rem" sortProperty="Address/City" filterProperty="Address/City" headerSpan="2">
+                        <multiLabels>
+                            <m:Label text="Contacts"/>
+                            <m:Label text="Address"/>
+                            <m:Label text="City" textAlign="Center" width="100%"/>
+                        </multiLabels>
+                        <template>
+                            <m:Text text="{Address/City}"/>
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <multiLabels>
+                            <m:Label text="Contacts"/>
+                            <m:Label text="Phone" textAlign="Center" width="100%"/>
+                        </multiLabels>
+                        <template>
+                            <m:Input value="{PhoneNumber}"/>
+                        </template>
+                    </Column>
+                    <Column width="11rem" sortProperty="EmailAddress" filterProperty="EmailAddress">
+                        <multiLabels>
+                            <m:Label text="Contacts"/>
+                            <m:Label text="Email" textAlign="Center" width="100%"/>
+                        </multiLabels>
+                        <template>
+                            <m:Input value="{EmailAddress}"/>
+                        </template>
+                    </Column>
+                    <Column width="auto" hAlign="End" sortProperty="BusinessPartnerID">
+                        <multiLabels>
+                            <m:Label visible="false"/>
+                            <m:Label visible="false"/>
+                            <m:Label text="Supplier ID"/>
+                        </multiLabels>
+                        <template>
+                            <m:Text text="{BusinessPartnerID}"/>
+                        </template>
+                    </Column>
+                </columns>
+            </Table>
+        </m:content>
+    </m:Page>
+</mvc:View>

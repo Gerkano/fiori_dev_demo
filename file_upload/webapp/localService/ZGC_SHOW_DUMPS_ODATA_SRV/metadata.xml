@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZGC_SHOW_DUMPS_ODATA_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="SHOW_DUMPS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Datum"/>
+                    <PropertyRef Name="Uzeit"/>
+                    <PropertyRef Name="Ahost"/>
+                    <PropertyRef Name="Uname"/>
+                    <PropertyRef Name="Mandt"/>
+                    <PropertyRef Name="Modno"/>
+                </Key>
+                <Property Name="Datum" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Current Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Uzeit" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ahost" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="App. Server" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Uname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="User Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Modno" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Work Process Index" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Seqno" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="CHAR03 data element for SYST" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Xhold" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Keep" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SHOW_DUMPS_PARAM" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Datum"/>
+                    <PropertyRef Name="Uname"/>
+                    <PropertyRef Name="Mandt"/>
+                </Key>
+                <Property Name="Datum" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Current Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Uname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="User Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZGC_SHOW_DUMPS_ODATA_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="SHOW_DUMPSSet" EntityType="ZGC_SHOW_DUMPS_ODATA_SRV.SHOW_DUMPS" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="SHOW_DUMPS_PARAMSet" EntityType="ZGC_SHOW_DUMPS_ODATA_SRV.SHOW_DUMPS_PARAM" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="http://172.16.56.194:8000/sap/opu/odata/sap/ZGC_SHOW_DUMPS_ODATA_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://172.16.56.194:8000/sap/opu/odata/sap/ZGC_SHOW_DUMPS_ODATA_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

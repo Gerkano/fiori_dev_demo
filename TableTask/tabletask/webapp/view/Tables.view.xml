@@ -1,0 +1,54 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ns.tabletask.controller.Tables" displayBlock="true">
+<Page id="page" title="{i18n>title}">
+        <content>
+            <Table noDataText="Drop column list items here and columns in the area above" id="table0" keyboardMode="Edit" 
+            items="{path: '/BusinessPartnerSet', sorter: {path: 'Address/City', descending: false}}" growing="true" growingScrollToLoad="true">
+                <headerToolbar>
+				<OverflowToolbar>
+					<ToolbarSpacer />
+					<Button icon="sap-icon://excel-attachment" press="onExport"/>
+				</OverflowToolbar>
+			</headerToolbar>
+                <items>
+                    <ColumnListItem type="Active" id="item0">
+                        <cells>
+                            <Text text="{CompanyName}" id="text2"/>
+                            <Text text="{PhoneNumber}" id="text3"/>
+                            <Text text="{EmailAddress}" id="text4"/>
+                            <Input value="{WebAddress}" width="100%" id="input0"/>
+                            <Text text="{Address/City}" id="text0"/></cells>
+                    </ColumnListItem>
+                </items>
+                <columns>
+                    <Column id="column0">
+                        <header>
+                            <Label text="Company name" id="label0"/>
+                        </header>
+                    </Column>
+                    <Column id="column1" minScreenWidth="Tablet" demandPopin="true">
+                        <header>
+                            <Label text="Phone number" id="label1"/>
+                        </header>
+                    </Column>
+                    <Column id="column2" minScreenWidth="Desktop" demandPopin="true">
+                        <header>
+                            <Label text="Email" id="label2"/>
+                        </header>
+                    </Column>
+                    <Column id="column4" minScreenWidth="Tablet" demandPopin="true">
+                        <header>
+                            <Label text="WebAddress" id="label4"/>
+                        </header>
+                    </Column>
+                    <Column id="column0_1677855904381" mergeDuplicates="true" vAlign="Middle" hAlign="Center">
+                        <header>
+                            <Label text="City" id="label0_1677855904542"/>
+                        </header>
+                    </Column></columns>
+                <!-- <customData>
+                    <sap.ui.core:CustomData xmlns:sap.ui.core="sap.ui.core" key="w5g.dt.editable" value="false" id="data6"/>
+                </customData> -->
+                </Table>
+        </content>
+    </Page>
+</mvc:View>

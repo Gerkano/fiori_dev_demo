@@ -1,0 +1,11 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ns.businesspartners.controller.Supplier" displayBlock="true" width="50%"><ObjectListItem type="Active" title="{CompanyName}" number="ID:{BusinessPartnerID}" numberUnit="Supplier ID" intro="{WebAddress}" id="item0" activeIcon="sap-icon://account">
+    <attributes>
+        <ObjectAttribute text="{EmailAddress}" id="attribute0"/>
+    </attributes>
+    <firstStatus>
+        <ObjectStatus text="Phone number: {PhoneNumber}" id="status0"/>
+    </firstStatus>
+    <secondStatus>
+        <ObjectStatus text="City: {Address/City}" id="status1"/>
+    </secondStatus></ObjectListItem>
+</mvc:View>

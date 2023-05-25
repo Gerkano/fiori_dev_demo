@@ -1,0 +1,30 @@
+{
+	"changeType": "addXML",
+	"reference": "customer.show.dumps.adaptation",
+	"namespace": "apps/customer.show.dumps.adaptation/changes/",
+	"projectId": "customer.show.dumps.adaptation",
+	"packageName": "$TMP",
+	"moduleName": "customer/show/dumps/adaptation/changes/fragments/searchButton.fragment.xml",
+	"support": {
+		"generator": "sap.ui.rta.command",
+		"sapui5Version": "1.111.4",
+		"command": "addXML"
+	},
+	"originalLanguage": "EN",
+	"layer": "CUSTOMER_BASE",
+	"fileType": "change",
+	"fileName": "id_1683699682471_57_addXML",
+	"content": {
+		"targetAggregation": "content",
+		"index": 9,
+		"fragmentPath": "fragments/searchButton.fragment.xml"
+	},
+	"texts": {},
+	"selector": {
+		"id": "View1--page",
+		"idIsLocal": true
+	},
+	"dependentSelector": {},
+	"jsOnly": false,
+	"creation": "2023-05-10T06:21:22.652Z"
+}

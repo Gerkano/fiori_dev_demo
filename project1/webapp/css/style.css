@@ -1,0 +1,14 @@
+/* Enter your custom styles here */
+
+[id$="__layout0"] {
+    text-align: center;
+}
+
+[class$="sapMBarPH sapMBarContainer"] {
+    text-align: center;
+}
+
+[id$="__button1"] {
+    margin-left: 27%;
+    margin-right: 25px;
+}

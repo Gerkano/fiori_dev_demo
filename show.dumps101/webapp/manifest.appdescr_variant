@@ -1,0 +1,17 @@
+{
+  "fileName": "manifest",
+  "layer": "CUSTOMER_BASE",
+  "fileType": "appdescr_variant",
+  "reference": "showDumps2.showdumpscds",
+  "id": "customer.show.dumps101",
+  "namespace": "apps/showDumps2.showdumpscds/appVariants/customer.show.dumps101/",
+  "content": [
+    {
+      "changeType": "appdescr_app_setTitle",
+      "content": {},
+      "texts": {
+        "i18n": "i18n/i18n.properties"
+      }
+    }
+  ]
+}

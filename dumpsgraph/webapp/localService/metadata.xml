@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="./sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZGC_SHOW_DUMPS_INFO_CDS_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZGC_SHOW_DUMPS_INFO_CDSType" sap:label="Dump info show CDS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="mandt"/>
+                    <PropertyRef Name="datum"/>
+                    <PropertyRef Name="uzeit"/>
+                    <PropertyRef Name="ahost"/>
+                    <PropertyRef Name="uname"/>
+                    <PropertyRef Name="modno"/>
+                    <PropertyRef Name="seqno"/>
+                </Key>
+                <Property Name="mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Client ID"/>
+                <Property Name="datum" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:label="Current Date" sap:quickinfo="System Date"/>
+                <Property Name="uzeit" Type="Edm.Time" Nullable="false" Precision="0" sap:label="Time" sap:quickinfo="System Time"/>
+                <Property Name="ahost" Type="Edm.String" Nullable="false" MaxLength="32" sap:label="Application Server" sap:quickinfo="Name of Current Application Server"/>
+                <Property Name="uname" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase" sap:label="User Name"/>
+                <Property Name="modno" Type="Edm.Int32" Nullable="false" sap:label="Work Process Index" sap:quickinfo="Index of Work Process"/>
+                <Property Name="seqno" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="UpperCase" sap:label="" sap:quickinfo="CHAR03 data element for SYST"/>
+                <Property Name="xhold" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Keep" sap:quickinfo="Storage of Short Dump"/>
+            </EntityType>
+            <EntityContainer Name="ZGC_SHOW_DUMPS_INFO_CDS_CDS_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZGC_SHOW_DUMPS_INFO_CDS" EntityType="ZGC_SHOW_DUMPS_INFO_CDS_CDS.ZGC_SHOW_DUMPS_INFO_CDSType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <Annotations Target="ZGC_SHOW_DUMPS_INFO_CDS_CDS.ZGC_SHOW_DUMPS_INFO_CDS_CDS_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="http://172.16.56.194:8000/sap/opu/odata/sap/ZGC_SHOW_DUMPS_INFO_CDS_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://172.16.56.194:8000/sap/opu/odata/sap/ZGC_SHOW_DUMPS_INFO_CDS_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
