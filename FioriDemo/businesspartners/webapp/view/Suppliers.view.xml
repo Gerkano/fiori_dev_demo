@@ -1,10 +1,22 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ns.businesspartners.controller.Suppliers" height="100%">
+<mvc:View 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns="sap.m" 
+controllerName="ns.businesspartners.controller.Suppliers" 
+height="100%">
 
-<List noDataText="Drop list items here" id="list0" items="{/BusinessPartnerSet}">
+<List 
+noDataText="Drop list items here" 
+id="list0" 
+items="{/BusinessPartnerSet}">
 
     <items>
 
-        <StandardListItem type="Navigation" icon="sap-icon://picture" id="item0" title="{CompanyName}" description="{WebAddress}" press=".onListItemPressed"/>
+        <StandardListItem 
+        type="Navigation" 
+        icon="sap-icon://picture" id="item0" 
+        title="{CompanyName}" 
+        description="{WebAddress}" 
+        press=".onListItemPressed"/>
 
     </items>
 

@@ -12,7 +12,7 @@
     "devDependencies": {
         "@sap-ux/ui5-middleware-fe-mockserver": "2",
         "@sap/ui5-builder-webide-extension": "^1.1.8",
-        "@sap/ux-ui5-tooling": "^1.9.4",
+        "@sap/ux-ui5-tooling": "^1.11.3",
         "@ui5/cli": "^3.0.0",
         "mbt": "^0.2.8",
         "rimraf": "^3.0.2",
